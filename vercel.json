@@ -1,0 +1,15 @@
+{
+  "$schema": "https://openapi.vercel.sh/vercel.json",
+  "framework": "vite",
+  "functions": {
+    "api/ai/review.ts": {
+      "maxDuration": 60
+    },
+    "api/ai/attention.ts": {
+      "maxDuration": 60
+    },
+    "api/ai/recommendations.ts": {
+      "maxDuration": 60
+    }
+  }
+}

@@ -11,6 +11,7 @@ node_modules
 dist
 dist-ssr
 *.local
+.vercel
 
 # Environment (API keys stay server-side; never commit secrets)
 .env
