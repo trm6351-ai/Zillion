@@ -1,0 +1,43 @@
+.status {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  flex-shrink: 0;
+  padding: 6px 12px 6px 10px;
+  border-radius: 999px;
+  border: 1px solid var(--border);
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 1px 2px rgba(31, 41, 55, 0.04);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: var(--brand);
+  box-shadow: 0 0 0 4px var(--brand-ring);
+}
+
+.dotBusy {
+  background: var(--amber);
+  box-shadow: 0 0 0 4px var(--amber-ring);
+}
+
+.dotComplete {
+  background: var(--brand);
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .dot {
+    box-shadow: 0 0 0 3px var(--brand-ring);
+  }
+}

@@ -1,0 +1,288 @@
+.panel {
+  --ink: #111827;
+  --ink-body: #1f2937;
+  --ink-support: #1f2937;
+  --paper: #f7f5fc;
+  --card: #ffffff;
+  padding: 4px 2px 8px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  animation: fadeUp 0.45s var(--ease) both;
+  min-width: 0;
+  color: var(--ink-body);
+}
+
+.title {
+  margin: 8px 0 0;
+  font-size: clamp(1.2rem, 1.05rem + 0.6vw, 1.4rem);
+  font-weight: 800;
+  line-height: 1.25;
+  letter-spacing: -0.03em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.copy {
+  margin: 10px 0 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.6;
+  color: var(--ink-body);
+  overflow-wrap: anywhere;
+}
+
+.intro,
+.result {
+  display: flex;
+  flex-direction: column;
+}
+
+.intro .copy {
+  max-width: 58ch;
+  margin-bottom: 20px;
+}
+
+.result {
+  color-scheme: light;
+  color: var(--ink-body);
+}
+
+.hint {
+  margin: 10px 0 0;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--ink-body);
+}
+
+.inlineError {
+  margin: 16px 0 0;
+  padding: 12px 0;
+  color: var(--ink-body);
+  font-size: 14px;
+  font-weight: 500;
+  line-height: 1.5;
+}
+
+.resultHead {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 16px;
+}
+
+.resultTitles {
+  min-width: 0;
+}
+
+.summary {
+  margin: 16px 0 0;
+  padding: 16px 16px 16px 18px;
+  max-width: none;
+  border: 1px solid rgba(79, 70, 229, 0.14);
+  border-left: 3px solid var(--indigo);
+  border-radius: 12px;
+  background: var(--paper);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.7;
+  color: var(--ink-body);
+  overflow-wrap: anywhere;
+}
+
+.block {
+  margin-top: 28px;
+  padding-top: 22px;
+  border-top: 1px solid var(--border-strong);
+}
+
+.blockTitle {
+  margin: 0;
+  font-size: clamp(1.05rem, 0.98rem + 0.35vw, 1.15rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+}
+
+.findings,
+.changes,
+.limitations,
+.evidence {
+  list-style: none;
+  margin: 14px 0 0;
+  padding: 0;
+}
+
+.findings,
+.changes {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.finding,
+.changeRow {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  padding: 16px 16px 16px 18px;
+  border: 1px solid rgba(31, 41, 55, 0.1);
+  border-left: 3px solid var(--indigo);
+  border-radius: 12px;
+  background: var(--card);
+  min-width: 0;
+}
+
+.findingKicker,
+.changeKicker,
+.fieldLabel,
+.changeLabel {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: #3730a3;
+}
+
+.index {
+  font-size: 11px;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  font-variant-numeric: tabular-nums;
+  color: #3730a3;
+  line-height: 1.4;
+}
+
+.findingTitle,
+.changeMetric {
+  margin: 8px 0 0;
+  font-size: clamp(1rem, 0.96rem + 0.25vw, 1.125rem);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+  color: var(--ink);
+  overflow-wrap: anywhere;
+}
+
+.findingCopy,
+.note,
+.limitations li,
+.changeEvidence,
+.evidence li {
+  margin: 8px 0 0;
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.65;
+  color: var(--ink-body);
+  overflow-wrap: anywhere;
+}
+
+.field {
+  margin-top: 14px;
+  padding-top: 12px;
+  border-top: 1px solid rgba(31, 41, 55, 0.08);
+}
+
+.fieldLabel {
+  margin: 0 0 6px;
+  color: #3730a3;
+}
+
+.evidence {
+  margin-top: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.evidence li,
+.changeEvidence {
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--ink-support);
+  font-variant-numeric: tabular-nums;
+}
+
+.evidence li {
+  padding-left: 0.9em;
+  text-indent: -0.9em;
+}
+
+.evidence li::before {
+  content: '• ';
+  font-weight: 700;
+  color: var(--ink);
+}
+
+.changeCopy {
+  min-width: 0;
+}
+
+.limitations {
+  margin-top: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.limitations li {
+  margin: 0;
+  padding: 12px 14px 12px 16px;
+  border: 1px solid rgba(31, 41, 55, 0.1);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+.note {
+  margin: 12px 0 0;
+  padding: 14px 16px;
+  border: 1px solid rgba(31, 41, 55, 0.1);
+  border-radius: 12px;
+  background: var(--card);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .resultHead {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .title {
+    font-size: 1.2rem;
+  }
+
+  .finding,
+  .changeRow,
+  .summary,
+  .note,
+  .limitations li {
+    padding: 14px 14px 14px 15px;
+  }
+
+  .findingCopy,
+  .note,
+  .limitations li {
+    font-size: 14px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .panel {
+    animation: none;
+  }
+}

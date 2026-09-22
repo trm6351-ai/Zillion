@@ -1,0 +1,170 @@
+:root {
+  --brand: #16a34a;
+  --brand-deep: #0b6b3a;
+  --brand-hover: #15803d;
+  --brand-soft: rgba(22, 163, 74, 0.1);
+  --brand-ring: rgba(22, 163, 74, 0.18);
+
+  --accent: var(--brand);
+  --accent-hover: var(--brand-hover);
+  --accent-soft: var(--brand-soft);
+  --accent-ring: var(--brand-ring);
+
+  --blue: #2563eb;
+  --blue-soft: rgba(37, 99, 235, 0.1);
+  --blue-ring: rgba(37, 99, 235, 0.16);
+
+  --indigo: #4f46e5;
+  --indigo-soft: rgba(79, 70, 229, 0.1);
+
+  --purple: #7c3aed;
+  --purple-soft: rgba(124, 58, 237, 0.1);
+  --purple-ring: rgba(124, 58, 237, 0.16);
+
+  --amber: #d97706;
+  --amber-soft: rgba(217, 119, 6, 0.12);
+  --amber-ring: rgba(217, 119, 6, 0.18);
+
+  --orange: #ea580c;
+  --orange-soft: rgba(234, 88, 12, 0.1);
+  --orange-ring: rgba(234, 88, 12, 0.16);
+
+  --red: #dc2626;
+  --red-soft: rgba(220, 38, 38, 0.1);
+  --red-ring: rgba(220, 38, 38, 0.16);
+
+  --teal: #0f766e;
+  --teal-soft: rgba(15, 118, 110, 0.1);
+  --teal-ring: rgba(15, 118, 110, 0.16);
+
+  --charcoal: #1f2937;
+
+  --ai: var(--purple);
+  --ai-soft: var(--purple-soft);
+  --ai-ring: var(--purple-ring);
+
+  --positive: var(--brand);
+  --positive-soft: var(--brand-soft);
+
+  --neutral: var(--blue);
+  --neutral-soft: var(--blue-soft);
+  --navy: var(--charcoal);
+
+  --attention: var(--orange);
+  --attention-soft: var(--orange-soft);
+  --attention-ring: var(--orange-ring);
+
+  --risk: var(--red);
+  --risk-soft: var(--red-soft);
+  --risk-ring: var(--red-ring);
+
+  --medium: var(--amber);
+  --low: var(--teal);
+
+  --bg: #f5f7f6;
+  --bg-elevated: #f8faf9;
+  --bg-tint: #eef3f2;
+  --surface: #ffffff;
+  --text: #1f2937;
+  --text-secondary: #4b5563;
+  --text-muted: #6b7280;
+  --border: rgba(31, 41, 55, 0.08);
+  --border-strong: rgba(31, 41, 55, 0.14);
+  --ai-wash: rgba(124, 58, 237, 0.045);
+  --attention-wash: rgba(234, 88, 12, 0.04);
+  --recommend-wash: rgba(15, 118, 110, 0.045);
+
+  --chart-1: #16a34a;
+  --chart-2: #2563eb;
+  --chart-3: #7c3aed;
+  --chart-4: #ea580c;
+  --chart-5: #0f766e;
+  --chart-6: #d97706;
+  --chart-7: #dc2626;
+
+  --shadow-sm: 0 1px 2px rgba(31, 41, 55, 0.04), 0 8px 20px rgba(31, 41, 55, 0.035);
+  --shadow-md: 0 10px 28px rgba(31, 41, 55, 0.07);
+  --shadow-hover: 0 8px 22px rgba(31, 41, 55, 0.08);
+  --radius-sm: 10px;
+  --radius-md: 16px;
+  --radius-lg: 18px;
+  --sans: 'Plus Jakarta Sans', 'Segoe UI', sans-serif;
+  --ease: cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html,
+body,
+#root {
+  min-height: 100%;
+}
+
+html {
+  background: var(--bg);
+}
+
+body {
+  margin: 0;
+  font-family: var(--sans);
+  font-size: 15px;
+  line-height: 1.5;
+  color: var(--text);
+  background:
+    radial-gradient(ellipse 72% 46% at 48% -18%, rgba(22, 163, 74, 0.07), transparent 58%),
+    radial-gradient(ellipse 42% 30% at 100% 0%, rgba(37, 99, 235, 0.045), transparent 54%),
+    radial-gradient(ellipse 36% 24% at 0% 100%, rgba(124, 58, 237, 0.03), transparent 48%),
+    var(--bg);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  text-rendering: optimizeLegibility;
+}
+
+#root {
+  min-height: 100svh;
+}
+
+h1,
+h2,
+h3,
+h4,
+p {
+  font-synthesis: none;
+}
+
+button,
+input {
+  font: inherit;
+}
+
+::selection {
+  background: var(--brand-soft);
+  color: var(--text);
+}
+
+:focus-visible {
+  outline: 2px solid var(--brand);
+  outline-offset: 2px;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html:focus-within {
+    scroll-behavior: auto;
+  }
+}

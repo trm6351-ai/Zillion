@@ -1,0 +1,142 @@
+.workspace {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  padding: 28px 4px 56px;
+}
+
+.inner {
+  width: min(1120px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  gap: 18px;
+  min-width: 0;
+  transition: width 0.3s var(--ease);
+}
+
+.hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  animation: fadeUp 0.45s var(--ease) both;
+}
+
+.loadedHead {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  gap: 8px;
+  animation: fadeUp 0.45s var(--ease) both;
+}
+
+.kicker {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
+  color: var(--brand);
+}
+
+.loadedTitle {
+  margin: 0;
+  font-size: 28px;
+  line-height: 1.16;
+  letter-spacing: -0.035em;
+  color: var(--text);
+  text-wrap: balance;
+}
+
+.loadedSubtitle {
+  margin: 0;
+  max-width: 48ch;
+  font-size: 14px;
+  line-height: 1.6;
+  color: var(--text-secondary);
+}
+
+.stack {
+  width: min(640px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  animation: fadeUp 0.5s var(--ease) both;
+  animation-delay: 0.08s;
+}
+
+.wide .stack {
+  width: min(920px, 100%);
+}
+
+.actions {
+  width: min(640px, 100%);
+  margin-inline: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  animation: fadeUp 0.5s var(--ease) both;
+  animation-delay: 0.18s;
+}
+
+.wide .actions {
+  width: min(920px, 100%);
+}
+
+.analyze {
+  min-width: 240px;
+  padding-inline: 40px;
+}
+
+.helper {
+  margin: 0;
+  max-width: 46ch;
+  text-align: center;
+  font-size: 12px;
+  line-height: 1.5;
+  color: var(--text-muted);
+}
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@media (max-width: 720px) {
+  .workspace {
+    padding: 20px 0 48px;
+  }
+
+  .loadedTitle {
+    font-size: 24px;
+  }
+
+  .analyze {
+    min-width: 0;
+    width: 100%;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .inner {
+    transition: none;
+  }
+
+  .hero,
+  .loadedHead,
+  .stack,
+  .actions {
+    animation: none;
+  }
+}

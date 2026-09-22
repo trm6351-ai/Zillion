@@ -1,0 +1,149 @@
+.flow {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  align-items: start;
+  align-self: stretch;
+  width: 100%;
+  margin: 0;
+  padding: 14px 6px 12px;
+  list-style: none;
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  background: var(--surface);
+  box-shadow: var(--shadow-sm);
+}
+
+.step {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 7px;
+  min-width: 0;
+  padding: 0 6px;
+  text-align: center;
+}
+
+.step:not(:last-child)::after {
+  content: '';
+  position: absolute;
+  top: 7px;
+  left: calc(50% + 11px);
+  width: calc(100% - 22px);
+  height: 1px;
+  background: var(--border-strong);
+  z-index: 0;
+}
+
+.step[data-state='complete']:not(:last-child)::after,
+.step[data-state='current']:not(:last-child)::after {
+  background: color-mix(in srgb, var(--step, var(--brand)) 42%, transparent);
+}
+
+.marker {
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  border: 2px solid var(--border-strong);
+  background: var(--surface);
+  z-index: 1;
+  flex-shrink: 0;
+}
+
+.copy {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+  width: 100%;
+}
+
+.index {
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  font-variant-numeric: tabular-nums;
+}
+
+.label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  line-height: 1.2;
+  color: var(--text-muted);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.step[data-id='data'] {
+  --step: var(--brand);
+}
+
+.step[data-id='dashboard'] {
+  --step: var(--blue);
+}
+
+.step[data-id='review'] {
+  --step: var(--purple);
+}
+
+.step[data-id='attention'] {
+  --step: var(--orange);
+}
+
+.step[data-id='recommendations'] {
+  --step: var(--teal);
+}
+
+.step[data-state='complete'] .marker,
+.step[data-state='current'] .marker {
+  border-color: var(--step);
+  background: var(--step);
+}
+
+.step[data-state='current'] .marker {
+  box-shadow: 0 0 0 4px color-mix(in srgb, var(--step) 18%, transparent);
+}
+
+.step[data-state='complete'] .index,
+.step[data-state='current'] .index {
+  color: var(--step);
+}
+
+.step[data-state='complete'] .label {
+  color: var(--text-secondary);
+}
+
+.step[data-state='current'] .label {
+  color: var(--text);
+}
+
+@media (max-width: 900px) {
+  .flow {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: 12px 10px;
+    gap: 0;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .step {
+    flex: 1 0 8.4rem;
+    padding: 0 10px;
+  }
+
+  .label {
+    text-overflow: clip;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .step[data-state='current'] .marker {
+    box-shadow: 0 0 0 3px color-mix(in srgb, var(--step) 18%, transparent);
+  }
+}

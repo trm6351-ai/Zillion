@@ -1,0 +1,39 @@
+.wrap {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  height: 40px;
+  overflow: visible;
+}
+
+.mark {
+  display: block;
+  height: 100%;
+  width: auto;
+  max-width: 168px;
+  object-fit: contain;
+  transform-origin: center center;
+  transition: transform 0.75s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+.wrap:hover .mark,
+.wrap:focus-visible .mark {
+  transform: rotate(360deg);
+}
+
+.wrap[data-reduced='true'] .mark,
+.wrap[data-reduced='true']:hover .mark,
+.wrap[data-reduced='true']:focus-visible .mark {
+  transition: none;
+  transform: none;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .mark,
+  .wrap:hover .mark,
+  .wrap:focus-visible .mark {
+    transition: none;
+    transform: none;
+  }
+}

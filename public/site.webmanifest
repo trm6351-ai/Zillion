@@ -1,0 +1,20 @@
+{
+  "name": "Zillion AI Business Insight",
+  "short_name": "Zillion AI",
+  "description": "From Excel data to business insight.",
+  "icons": [
+    {
+      "src": "/favicon.webp",
+      "sizes": "300x300",
+      "type": "image/webp"
+    },
+    {
+      "src": "/zillion-mark.webp",
+      "sizes": "512x512",
+      "type": "image/webp"
+    }
+  ],
+  "display": "standalone",
+  "background_color": "#F5F7F6",
+  "theme_color": "#16A34A"
+}
